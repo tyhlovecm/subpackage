@@ -1,7 +1,8 @@
 <?php
 header('Content-type: application/json;charset=utf-8");');
-define('DOWNLOAD_DIR', '/www/download/sdkgame/');
-define('SUBPACKAGE_DIR', __DIR__.DIRECTORY_SEPARATOR."/subPackage");
+define('DOWNLOAD_DIR', '/www/download/sdkgame/');//包存放目录
+define('SUBPACKAGE_DIR', __DIR__.DIRECTORY_SEPARATOR."/subPackage");//需要用到的类
+define('PLIST_TMP_PATH', '/tmp/tmp_dir');//info.plist临时产生目录
 
 //接受参数
 $params = json_decode(file_get_contents('php://input'), true);
@@ -180,7 +181,7 @@ function getApkinfo($file){
 function getIpainfo($targetFile){
 	require SUBPACKAGE_DIR."/vendor/autoload.php";
 	//临时目录存放info.plist
-	$storage_path = '/tmp/tmp_dir';
+	$storage_path = PLIST_TMP_PATH;
 
 	// 遍历zip包中的Info.plist文件
 	$zipper = new \Chumper\Zipper\Zipper;
