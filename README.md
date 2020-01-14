@@ -4,7 +4,7 @@
 1.生成母包信息：包含ios ipa包 ，安卓 apk包  2.根据母包自动生成渠道包
 
 #### 软件架构
-subPackage 用到的库文件
+subPackage 用到的库文件  
 sub.php    入口文件
 
 #### 安装教程
