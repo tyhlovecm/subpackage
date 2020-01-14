@@ -187,13 +187,11 @@ function getIpainfo($targetFile){
 	$zipper = new \Chumper\Zipper\Zipper;
 	$zipFiles = $zipper->make($targetFile)->listFiles('/Info\.plist$/i');
 
-	$matched = 0;
 	$gameinfo = [];
 	if ($zipFiles) {
 	    foreach ($zipFiles as $k => $filePath) {
 	        // 正则匹配包根目录中的Info.plist文件
 	        if (preg_match("/Payload\/([^\/]*)\/Info\.plist$/i", $filePath, $matches)) {
-	            $matched = 1;
 	            $app_folder = $matches[1];
 
 	            // 将plist文件解压到ipa目录中的对应包名目录中
@@ -215,9 +213,9 @@ function getIpainfo($targetFile){
 	            $gameinfo['vername'] = $ipaInfo['CFBundleShortVersionString'];
 	            $gameinfo['verid'] = str_replace('.', '', $ipaInfo['CFBundleShortVersionString']);
 	            $gameinfo['size'] = filesize($targetFile);
-	            return $gameinfo;
+	            break;
 	        }
 	    }
 	}
-	
+	return $gameinfo;
 }
