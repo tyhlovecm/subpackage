@@ -1,0 +1,6 @@
+{
+    "require": {
+        "chumper/zipper": "^1.0",
+        "rodneyrehm/plist": "^2.0"
+    }
+}
