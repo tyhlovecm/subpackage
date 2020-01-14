@@ -215,8 +215,9 @@ function getIpainfo($targetFile){
 	            $gameinfo['vername'] = $ipaInfo['CFBundleShortVersionString'];
 	            $gameinfo['verid'] = str_replace('.', '', $ipaInfo['CFBundleShortVersionString']);
 	            $gameinfo['size'] = filesize($targetFile);
+	            return $gameinfo;
 	        }
 	    }
 	}
-	return $gameinfo;
+	
 }
