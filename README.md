@@ -18,6 +18,8 @@ sub.php    入口文件
 3.  项目区分安卓，ios 包方式可以自行定义。目前支持ipa，apk两种包信息读取以及打入渠道信息。如有其它需求请自行扩展
 4.  apk母包必须使用v1签名方式打包，不然可能出现渠道包安装不上的问题
 
+![包目录结构说明](https://gitee.com/tongyh/subpackage/blob/master/dir-tmplate.png "tongyh")
+
 ### 问题反馈
 使用中遇到任何问题，欢迎及时反馈！
 
